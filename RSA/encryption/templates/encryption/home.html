@@ -1,0 +1,61 @@
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>Encryption of texts by methodology RSA</title>
+<link type="text/css" href="{% static 'encryption/css/styles.css' %}" rel="stylesheet"/>
+<link href="{% static 'encryption/video/Grey - 91072.mp4' %}" rel="videobackground" type="video/mp4"/>
+</head>
+<body>
+<video autoplay muted loop id="myVideo">
+    <source src="{% static 'encryption/video/Grey - 91072.mp4' %}" type="video/mp4">
+</video>
+
+<div class="main">
+    <div class="top">
+        <div class="sidebar2"></div>
+        <div class="content2"></div>
+    </div>
+    <div class="middle">
+        <div class="sidebar">
+            <form method="post">
+                <div class="cardleft">
+                    <div style="padding-top:20px;padding-left:35px;font-size:18px;">
+                        <b>Your EMAIL:</b></div>
+                    {% csrf_token %}
+                    {{ formtext.email }}
+                    <span>{{ error }}</span>
+                    <div style="padding-top:15px;padding-left:22px;font-size:18px;">
+                        <b>Your OPEN KEY:</b>
+                    </div>
+                    <div style="margin-top:7%;text-align:center;font-size:18px;"> _ _</div>
+                    <div style="padding-top:20px;padding-left:15px;font-size:18px">
+                        <b>Your SECRET KEY:</b></div>
+                    <div style="margin-top:7%;text-align:center;font-size:18px;"> _ _</div>
+                </div>
+        </div>
+        <div class="content">
+            <p></p>
+            <div class="card" style="border-radius: 120px 5px">
+                {{ formtext.user_text }}
+                <br>
+                <span>{{ error }}</span>
+            </div>
+            <button class="cta">
+                <input type="submit" name="ENCRYPT" value="ENCRYPT"/>
+                <svg viewBox="0 0 13 10" height="10px" width="15px">
+                    <path d="M1,5 L11,5"></path>
+                    <polyline points="8 1 12 5 8 9"></polyline>
+                </svg>
+            </button>
+            </form>
+            <div class="card" style="border-radius: 5px 120px">
+                <div class="usertext"></div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom" style="vertical-align:middle">
+        <p>2022 &copy; RSA-encryption.com - Encryption of texts by methodology RSA.</p>
+    </div>
+</div>
+</body>

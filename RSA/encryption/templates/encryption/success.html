@@ -1,0 +1,51 @@
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>Encryption of texts by methodology RSA</title>
+    <link type="text/css" href="{% static 'encryption/css/styles.css' %}" rel="stylesheet" />
+    <link href="{% static 'encryption/video/Grey - 91072.mp4' %}" rel="videobackground" type="video/mp4"/>
+</head>
+<body>
+<video autoplay muted loop id="myVideo">
+    <source src="{% static 'encryption/video/Grey - 91072.mp4' %}" type="video/mp4">
+</video>
+
+<div class="main">
+    <div class="top">
+        <div class="sidebar2">
+            <div class="divsuccess">
+                <a style="font-size:25px;color:black;display:inline-block;text-decoration:none;padding-top: 7px" href="/">
+                    <b>Back</b></a> </div></div>
+        <div class="content2"></div>
+    </div>
+    <div class="middle">
+        <div class="sidebar">
+            <div class="cardleft">
+                <div style="padding-top:25px;padding-left:35px;font-size:18px;">
+                    <b>Your EMAIL:</b></div>
+                <div style="margin-top:7%;text-align:center;font-size:22px;"> {{ email }} </div>
+                <div style="padding-top:15px;padding-left:22px;font-size:18px;">
+                    <b>Your OPEN KEY:</b>
+                </div>
+                <div style="margin-top:7%;text-align:center;font-size:22px;"> {{ openkey }} </div>
+                <div style="padding-top:20px;padding-left:15px;font-size:18px">
+                    <b>Your SECRET KEY:</b></div>
+                <div style="margin-top:7%;text-align:center;font-size:22px;"> {{ secretkey }} </div>
+            </div>
+        </div>
+        <div class="content">
+            <p></p>
+            <div class="card" style="border-radius: 120px 5px;margin-top: 75px">
+                <div class="usertext">{{ usertext }}</div>
+            </div>
+            <div style="margin-top: 40px"></div>
+            <div class="card" style="border-radius: 5px 120px">
+                <div class="usertext"> {{ encryptiontext }} </div></div>
+        </div>
+    </div>
+    <div class="bottom" style="vertical-align:middle">
+        <p>2022 &copy; RSA-encryption.com - Encryption of texts by methodology RSA.</p>
+    </div>
+</div>
+</body>
